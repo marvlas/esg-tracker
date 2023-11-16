@@ -1,4 +1,4 @@
-# ESG Tracker - Environmental, Social and Governance
+# ESG Tracker
 
 ## MVP
 
