@@ -47,8 +47,8 @@ An app for investors, regulators, and individuals to explore companies' ESG and 
 
 ### Milestone 2
 
-- [ ] Fetching data from API 
-    - [ ] Index page: displaying companies list
+- [x] Fetching data from API 
+    - [x] Index page: displaying companies list
     - [ ] Detail page: displaying companies details
     - [ ] Post page
         - [ ] Fetching data
