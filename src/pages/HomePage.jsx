@@ -6,7 +6,7 @@ function HomePage() {
 
     const apiDataUrl = import.meta.env.VITE_API_URL
 
-    const [companies, setCompanies ] = useState([])
+    const [companies, setCompanies ] = useState(null)
 
     const getApiData = () => {
         axios
@@ -28,7 +28,10 @@ function HomePage() {
     return(
         <>
             <h1>This is the home page</h1>
-            {companies.map( elm => {
+
+            {companies === null
+            ? <p>Loading...</p>
+            : companies.map( elm => {
                 return(
                     <div className="company-card" key={elm.id}>
                         <Link to={`/company/${elm.id}`}>
@@ -46,7 +49,7 @@ function HomePage() {
                         </div>
                     </div>
                 )
-            })}
+            })} 
         </>
     )
 }
