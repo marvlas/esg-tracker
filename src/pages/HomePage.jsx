@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 
 function HomePage() {
 
@@ -29,13 +30,14 @@ function HomePage() {
             <h1>This is the home page</h1>
             {companies.map( elm => {
                 return(
-                    <div className="company" key={elm.id}>
-                        {<img src={elm.logo} alt={elm.name}/>}
+                    <div className="company-card" key={elm.id}>
+                        <Link to={`/company/${elm.id}`}>
+                            {<img src={elm.logo} alt={elm.name}/>}
+                        </Link>
                         <h3>{elm.name}</h3>
                         <h4>{elm.marketCap}</h4>
-                        <p>{elm.description}</p>
                         <div className="location">
-                            <div>{elm.location.country}</div>
+                            {elm.location.country}
                         </div>
                         <div className="esg">
                             <div>{elm.esg.e_index}</div>

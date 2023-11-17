@@ -49,7 +49,7 @@ An app for investors, regulators, and individuals to explore companies' ESG and 
 
 - [x] Fetching data from API 
     - [x] Index page: displaying companies list
-    - [ ] Detail page: displaying companies details
+    - [x] Detail page: displaying companies details
     - [ ] Post page
         - [ ] Fetching data
         - [ ] Display forms
