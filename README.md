@@ -38,12 +38,12 @@ An app for investors, regulators, and individuals to explore companies' ESG and 
 - [x] Backend API with 10 companies (JSON Server)
     - [x] Initial setup on VSCode with JSON data (.env PORT=5005)
     - [x] Testing API with Postman (get, post, put, delete)
-- [ ] React App structure on VSCode (routes, components, dependencies)
-    - [ ] Index page 
-    - [ ] Detail page
-    - [ ] Add post page
-    - [ ] Edit/delete post page
-    - [ ] Favourites page
+- [x] React App structure on VSCode (routes, components, dependencies)
+    - [x] Index page 
+    - [x] Detail page
+    - [x] Add post page
+    - [x] Edit/delete post page
+    - [x] Favourites page
 
 ### Milestone 2
 
