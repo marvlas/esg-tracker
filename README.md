@@ -50,11 +50,11 @@ An app for investors, regulators, and individuals to explore companies' ESG and 
 - [x] Fetching data from API 
     - [x] Index page: displaying companies list
     - [x] Detail page: displaying companies details
-    - [ ] Post page
-        - [ ] Fetching data
-        - [ ] Display forms
-        - [ ] Event handler
-        - [ ] POST request
+    - [x] Post page
+        - [x] Fetching data
+        - [x] Display forms
+        - [x] Event handler
+        - [x] POST request
     - [ ] Edit/delete page
         - [ ] Fetching data
         - [ ] Display forms
@@ -79,6 +79,8 @@ An app for investors, regulators, and individuals to explore companies' ESG and 
 - [ ] Best featured companies for different categories (E,S,G) 
 - [ ] Implementing map with companies
 - [ ] Company contact form on detail page
+- [ ] Histogram for the ESG scores
+- [ ] Graphs/tables
 
 
 ## Resources
