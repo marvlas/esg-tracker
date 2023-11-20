@@ -55,11 +55,11 @@ An app for investors, regulators, and individuals to explore companies' ESG and 
         - [x] Display forms
         - [x] Event handler
         - [x] POST request
-    - [ ] Edit/delete page
-        - [ ] Fetching data
-        - [ ] Display forms
-        - [ ] Event handler
-        - [ ] POST request
+    - [x] Edit/delete page
+        - [x] Fetching data
+        - [x] Display forms
+        - [x] Event handler
+        - [x] PUT request
     - [ ] Favourites page
         - [ ] Fetching data
         - [ ] Filtering data (.filter method)

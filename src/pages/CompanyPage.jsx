@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 
 function CompanyPage() {
 
@@ -29,6 +29,16 @@ function CompanyPage() {
         getApiData()
     }, [])
 
+    const deleteCompany = () => {
+        axios.delete(apiDataUrl + "/" + id)
+        .then(() => {
+            navigate("/")
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+    }
+
     return(
         <>
             {company === null
@@ -52,6 +62,13 @@ function CompanyPage() {
                     </div>
                 </div>
             }
+
+            <Link to={`/company/${id}/edit`}>
+                <button>Edit Company</button>
+            </Link>
+
+            <button onClick={deleteCompany}>Delete Company</button>
+
         </>
     )
 }
