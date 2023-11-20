@@ -2,17 +2,17 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 
-function HomePage() {
+function HomePage(props) {
 
     const apiDataUrl = import.meta.env.VITE_API_URL
 
     const [companies, setCompanies ] = useState(null)
-
+    const [ toggle, setToggle] = useState(false)
     const getApiData = () => {
         axios
             .get(apiDataUrl)
             .then( response => {
-                console.log(response.data)
+                //console.log(response.data)
                 setCompanies(response.data)
             })
             .catch( error => {
@@ -25,9 +25,14 @@ function HomePage() {
         getApiData()
     }, [])
 
+    
+
     return(
         <>
+            <Link to="/favourites">Favourites</Link>
             <h1>This is the home page</h1>
+            <button onClick={() => setToggle(!toggle)}> hello</button>
+            {toggle && (<h2>now I'm here</h2>)}
             <main className="companies-list">
                 {companies === null
                     ? <p>Loading...</p>
@@ -47,6 +52,9 @@ function HomePage() {
                                     <div>{elm.esg.s_index}</div>
                                     <div>{elm.esg.g_index}</div>
                                 </div>
+                                <button onClick={() => { props.callbackAddFavourites(elm.id) }}>
+                                    Add to my favourites
+                                </button>
                             </div>
                         )
                     })

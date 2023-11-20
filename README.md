@@ -59,11 +59,11 @@ An app for investors, regulators, and individuals to explore companies' ESG and 
         - [x] Fetching data
         - [x] Display forms
         - [x] Event handler
-        - [x] PUT request
-    - [ ] Favourites page
-        - [ ] Fetching data
-        - [ ] Filtering data (.filter method)
-        - [ ] Displaying information on favourites page
+        - [x] POST request
+    - [x] Favourites page
+        - [x] Fetching data
+        - [x] Filtering data (.filter method)
+        - [x] Displaying information on favourites page
         - [ ] Delete company
 
 ### Milestone 3
