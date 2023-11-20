@@ -65,7 +65,7 @@ function App() {
         <Route path="/" element={<HomePage callbackAddFavourites={addToFavourites} />} />
         <Route path="/company/:id" element={<CompanyPage />} />
         <Route path="/company/:id/edit" element={<EditCompanyPage />} />
-        <Route path="/company/:id/add" element={<AddCompanyPage />} />
+        <Route path="/company/add" element={<AddCompanyPage />} />
         <Route path="/favourites/" element={<FavouritesPage favouritesCompanies={favouritesCompanies} callbackToDelete={deleteCompany}/>} />
       </Routes>
     </>

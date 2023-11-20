@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { Link, useParams } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
 
 function CompanyPage() {
 
@@ -11,6 +11,8 @@ function CompanyPage() {
     console.log(company)
    
     const {id} = useParams()
+
+    const navigate = useNavigate()
     
     const getApiData = () => {
         axios
