@@ -64,7 +64,7 @@ An app for investors, regulators, and individuals to explore companies' ESG and 
         - [x] Fetching data
         - [x] Filtering data (.filter method)
         - [x] Displaying information on favourites page
-        - [ ] Delete company
+        - [x] Delete company
 
 ### Milestone 3
 - [ ] Implement navigation functionalities
