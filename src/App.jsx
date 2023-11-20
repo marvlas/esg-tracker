@@ -1,4 +1,3 @@
-import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import CompanyPage from './pages/CompanyPage'
@@ -7,6 +6,8 @@ import AddCompanyPage from './pages/AddCompanyPage'
 import FavouritesPage from './pages/FavouritesPage'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -56,13 +57,18 @@ function App() {
 
   return (
     <>
+
+      <Navbar />
+
       <Routes>
         <Route path="/" element={<HomePage callbackAddFavourites={addToFavourites} />} />
         <Route path="/company/:id" element={<CompanyPage />} />
         <Route path="/company/:id/edit" element={<EditCompanyPage />} />
-        <Route path="/company/:id/add" element={<AddCompanyPage />} />
+        <Route path="/company/add" element={<AddCompanyPage />} />
         <Route path="/favourites/" element={<FavouritesPage favouritesCompanies={favouritesCompanies} />} />
       </Routes>
+
+      <Footer />
     </>
   )
 }

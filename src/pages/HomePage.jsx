@@ -29,11 +29,10 @@ function HomePage(props) {
 
     return(
         <>
-            <Link to="/favourites">Favourites</Link>
-            <h1>This is the home page</h1>
-            <button onClick={() => setToggle(!toggle)}> hello</button>
-            {toggle && (<h2>now I'm here</h2>)}
-            <main className="companies-list">
+            <div className="centered">
+                <h1>Companies</h1>
+            </div>
+            <main className="companies-list container">
                 {companies === null
                     ? <p>Loading...</p>
                     : companies.map( elm => {
@@ -42,19 +41,23 @@ function HomePage(props) {
                                 <Link to={`/company/${elm.id}`}>
                                     {<img src={elm.logo} alt={elm.name}/>}
                                 </Link>
-                                <h3>{elm.name}</h3>
-                                <h4>{elm.marketCap}</h4>
-                                <div className="location">
-                                    {elm.location.country}
+                                <div className="company-card-info">
+                                    <div>
+                                        <h3>{elm.name}</h3>
+                                        <div><span>Market Cap:</span>{elm.marketCap}</div>
+                                    </div>
+                                    <h4 className="location">{elm.location.country}</h4>
                                 </div>
                                 <div className="esg">
                                     <div>{elm.esg.e_index}</div>
                                     <div>{elm.esg.s_index}</div>
                                     <div>{elm.esg.g_index}</div>
                                 </div>
-                                <button onClick={() => { props.callbackAddFavourites(elm.id) }}>
-                                    Add to my favourites
-                                </button>
+                                <div className="company-card-button-wrap">
+                                    <button onClick={() => { props.callbackAddFavourites(elm.id) }}>
+                                        Add to my favourites
+                                    </button>
+                                </div>
                             </div>
                         )
                     })

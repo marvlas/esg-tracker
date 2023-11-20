@@ -55,7 +55,7 @@ const handleSubmit = (e) => {
 }
 
     return (
-        <>
+        <main className="form-container">
 
             <h1>Add Company Below</h1>
 
@@ -199,7 +199,7 @@ const handleSubmit = (e) => {
                 <button>Submit</button>
 
             </form>
-        </>
+        </main>
     )
 }
 

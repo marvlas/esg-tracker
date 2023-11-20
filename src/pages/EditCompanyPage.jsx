@@ -78,7 +78,7 @@ const handleFormSubmit = (e) => {
 
 
     return (
-        <>
+        <main className="form-container">
         <h1>Edit Project Below</h1>
 
             <form onSubmit={handleFormSubmit}>
@@ -223,7 +223,7 @@ const handleFormSubmit = (e) => {
 
             
 
-        </>
+        </main>
 
     )
 }
