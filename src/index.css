@@ -233,3 +233,40 @@ form button {
   font-weight: 600;
   color: var(--dark-grey);
 }
+
+@media only screen and (max-width: 960px) {
+  .companies-list {
+    gap: 24px;
+  }
+  .company-card {
+    flex: 0 1 100%;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+ .form-container {
+    padding-left: 16px;
+    padding-right: 16px;
+ }
+ form label input {
+    width: 100%;
+    min-width: 0;
+ }
+ form button {
+    width: 100%;
+    min-width: 0;
+ }
+ .company .img-wrap, .company .info-wrap {
+    flex-basis: 100%;   
+ }
+ .company .img-wrap {
+    padding: 32px 0;
+ }
+ .company {
+    display: flex;
+    flex-direction: column;
+ }
+ .buttons-wrap {
+    text-align: center;
+ }
+}
