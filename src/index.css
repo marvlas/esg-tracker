@@ -119,7 +119,7 @@ button:hover {
 .company-card .esg {
   font-size: 12px;
   margin-top: 24px;
-  color: var(--grey);
+  color: var(--dark-grey);
 }
 
 .company-card .esg div {

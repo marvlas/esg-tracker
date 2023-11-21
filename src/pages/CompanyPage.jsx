@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { Link, useNavigate, useParams } from "react-router-dom"
+import ESGIndicator from "../components/ESGIndicator"
 
 function CompanyPage() {
 
@@ -49,13 +50,22 @@ function CompanyPage() {
                         <div className="info-wrap">
                             <div className="info-wrap-heading">
                                 <h1>{company.name}</h1>
-                                <h2><span>Market Cap:</span>{company.marketCap}</h2>
+                                <h2><span>Market Cap:</span>${company.marketCap.toLocaleString()}</h2>
                             </div>
                             <p>{company.description}</p>
                             <div className="esg">
-                                <div>{company.esg.e_index}</div>
-                                <div>{company.esg.s_index}</div>
-                                <div>{company.esg.g_index}</div>
+                                <div>
+                                    <p>Environmental score:</p>
+                                    <ESGIndicator score={company.esg.e_index} />
+                                </div>
+                                <div>
+                                    <p>Social score:</p>
+                                    <ESGIndicator score={company.esg.s_index} />
+                                </div>
+                                <div>
+                                    <p>Governance score:</p>
+                                    <ESGIndicator score={company.esg.g_index} />
+                                </div>
                             </div>
                             <div className="location">
                                 <div>{company.location.address}</div>

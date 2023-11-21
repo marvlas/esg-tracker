@@ -67,11 +67,11 @@ An app for investors, regulators, and individuals to explore companies' ESG and 
         - [x] Delete company
 
 ### Milestone 3
-- [ ] Implement navigation functionalities
-    - [ ] Navbar (logo, home, favourites, add company, my company)
+- [x] Implement navigation functionalities
+    - [x] Navbar (logo, home, favourites, add company, my company)
     - [ ] Social media section
-    - [ ] Footer
-- [ ] Styling with CSS
+    - [x] Footer
+- [x] Styling with CSS
 - [ ] Making the app responsive
 
 ## Bonuses
@@ -79,7 +79,7 @@ An app for investors, regulators, and individuals to explore companies' ESG and 
 - [ ] Best featured companies for different categories (E,S,G) 
 - [ ] Implementing map with companies
 - [ ] Company contact form on detail page
-- [ ] Histogram for the ESG scores
+- [x] Histogram for the ESG scores
 - [ ] Graphs/tables
 
 
