@@ -34,7 +34,6 @@ function App() {
   }, [])
 
 
-
   // add favourite companies
   const [favouritesCompanies, setFavouritesCompanies] = useState([])
 
@@ -49,10 +48,16 @@ function App() {
 
   }
 
-  // to comment **
-  useEffect( () => {
-      console.log(favouritesCompanies)
-  }, [favouritesCompanies] )
+
+
+  // delete company from favourites page
+  const deleteCompany = (id) => {
+    
+    const newList =favouritesCompanies.filter((companyDetails) => {
+        return companyDetails.id !== id
+    })
+    setFavouritesCompanies(newList)
+}
 
 
   return (
@@ -65,7 +70,7 @@ function App() {
         <Route path="/company/:id" element={<CompanyPage />} />
         <Route path="/company/:id/edit" element={<EditCompanyPage />} />
         <Route path="/company/add" element={<AddCompanyPage />} />
-        <Route path="/favourites/" element={<FavouritesPage favouritesCompanies={favouritesCompanies} />} />
+        <Route path="/favourites/" element={<FavouritesPage favouritesCompanies={favouritesCompanies} callbackToDelete={deleteCompany}/>} />
       </Routes>
 
       <Footer />

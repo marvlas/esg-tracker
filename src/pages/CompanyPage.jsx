@@ -1,12 +1,14 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { Link, useParams } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
 
 function CompanyPage() {
 
     const apiDataUrl = import.meta.env.VITE_API_URL
     const [company, setCompany] = useState(null)   
     const {id} = useParams()
+
+    const navigate = useNavigate()
     
     const getApiData = () => {
         axios
