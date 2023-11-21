@@ -76,6 +76,7 @@ An app for investors, regulators, and individuals to explore companies' ESG and 
 
 ## Bonuses
 - [ ] Filtering, search queries
+- [ ] Histogram for the ESG scores
 - [ ] Best featured companies for different categories (E,S,G) 
 - [ ] Implementing map with companies
 - [ ] Company contact form on detail page
