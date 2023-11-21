@@ -49,7 +49,6 @@ function App() {
   }
 
 
-
   // delete company from favourites page
   const deleteCompany = (id) => {
     
@@ -58,6 +57,8 @@ function App() {
     })
     setFavouritesCompanies(newList)
 }
+
+
 
 
   return (

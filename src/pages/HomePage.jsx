@@ -1,19 +1,21 @@
 import axios from "axios"
-import { useEffect, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import { Link } from "react-router-dom"
+import Filter from "../components/Filter"
 
 function HomePage(props) {
-
+    
     const apiDataUrl = import.meta.env.VITE_API_URL
-
     const [companies, setCompanies ] = useState(null)
-    const [ toggle, setToggle] = useState(false)
+    const [displayedCompanies, setDisplayedCompanies ] = useState(null)
+    
+    // fetch API companies data
     const getApiData = () => {
         axios
             .get(apiDataUrl)
             .then( response => {
-                //console.log(response.data)
                 setCompanies(response.data)
+                setDisplayedCompanies(response.data)
             })
             .catch( error => {
                 console.log('not receiving data')
@@ -25,17 +27,31 @@ function HomePage(props) {
         getApiData()
     }, [])
 
-    
+    // filter companies
+    const filterCompanies = (countryName) => {
+        if(countryName !== "all") {
+            const filteredCompanies = companies.filter((elm) => {
+                return elm.location.country === countryName
+            })
+            setDisplayedCompanies(filteredCompanies)
+        } else {
+            setDisplayedCompanies(companies)
+        }
+    }
+
 
     return(
         <>
             <div className="centered">
                 <h1>Companies</h1>
             </div>
+
+            <Filter companies={companies} filterCompanies={filterCompanies} />
+
             <main className="companies-list container">
-                {companies === null
+                {displayedCompanies === null
                     ? <p>Loading...</p>
-                    : companies.map( elm => {
+                    : displayedCompanies.map( elm => {
                         return(
                             <div className="company-card" key={elm.id}>
                                 <Link to={`/company/${elm.id}`}>
