@@ -50,7 +50,10 @@ function CompanyPage() {
                         <div className="info-wrap">
                             <div className="info-wrap-heading">
                                 <h1>{company.name}</h1>
-                                <h2><span>Market Cap:</span>${company.marketCap.toLocaleString()}</h2>
+                                <div>
+                                    <h2><span>Market Cap:</span>${company.marketCap.toLocaleString()}</h2>
+                                    <h2>{company.industry}</h2>
+                                </div>
                             </div>
                             <p>{company.description}</p>
                             <div className="esg">

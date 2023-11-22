@@ -5,29 +5,18 @@ function ESGIndicator ({ score }) {
     const moderate = 50;
   
     // Defining color based on score
-    let color;
+    let indicatorClass;
     if (score >= good) {
-      color = '#138808';
+      indicatorClass = 'esg-good';
     } else if (score >= moderate) {
-      color = '#e1ad01';
+      indicatorClass = 'esg-moderate';
     } else {
-      color = '#960018';
+      indicatorClass = 'esg-bad';
     }
-  
-    // Styling for the indicator
-    const ESGStyle = {
-      width: `${score}%`,
-      backgroundColor: color,
-      height: '20px',
-      borderRadius: '5px',
-      margin: '5px 0',
-      boxShadow: 'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px',
-      opacity: '0.75'
-    };
   
     return (
       <div>
-        <div style={ESGStyle}></div>
+        <div className={`esg-indicator ${indicatorClass}`} style={{ width: `${score}%` }}></div>
         <p>{score}</p>
       </div>
     );
