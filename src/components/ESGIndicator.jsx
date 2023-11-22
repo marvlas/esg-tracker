@@ -22,7 +22,7 @@ function ESGIndicator ({ score }) {
       borderRadius: '5px',
       margin: '5px 0',
       boxShadow: 'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px',
-      opacity: '0.8'
+      opacity: '0.75'
     };
   
     return (
