@@ -74,9 +74,10 @@
         width: 50%;
         padding: 20px;
         text-align: right;
-        position: absolute;
+        position: fixed;
         right: 0;
         top: 60px;
+        z-index: 999;
     }
     
     .hamburger-nav ul > li {
