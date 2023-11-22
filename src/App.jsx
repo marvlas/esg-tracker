@@ -46,8 +46,15 @@ function App() {
           setFavouritesCompanies([selectedCompany, ...favouritesCompanies])
       }
 
-  }
+      // favourites icon animation
+      const heartIcon = document.getElementById('favourite-icon');
+      heartIcon.classList.add('animated-icon')
 
+      setTimeout(() => {
+        heartIcon.classList.remove('animated-icon')
+      }, 500)
+
+  }
 
   // delete company from favourites page
   const deleteCompany = (id) => {
@@ -55,10 +62,9 @@ function App() {
     const newList =favouritesCompanies.filter((companyDetails) => {
         return companyDetails.id !== id
     })
+
     setFavouritesCompanies(newList)
 }
-
-
 
 
   return (

@@ -6,6 +6,9 @@
     padding: 16px 5vw;
     align-items: center;
     margin-bottom: 64px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
 .Navbar ul {
@@ -38,6 +41,7 @@
     color: var(--primary-color);
     font-weight: 600;
 }
+
 
 .Navbar ul > .favourites-item > a:hover {
     background-color: var(--secondary-color);
@@ -114,3 +118,7 @@
 
 
 
+
+.animated-icon path {
+    fill: var(--secondary-color);
+}
