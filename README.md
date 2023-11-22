@@ -69,18 +69,23 @@ An app for investors, regulators, and individuals to explore companies' ESG and 
 ### Milestone 3
 - [x] Implement navigation functionalities
     - [x] Navbar (logo, home, favourites, add company, my company)
-    - [ ] Social media section
     - [x] Footer
 - [x] Styling with CSS
+    - [ ] Styling button in favourites page -> M
+    - [ ] Styling histograms colors -> J
 - [x] Making the app responsive
+    - [ ] Add mobile navigation (toggle burger menu) -> J
 
 ## Bonuses
 - [x] Filtering, search queries
+    - [ ] Industry, ESG -> M
+    - [ ] Heart effect, when company adeed to the favourites -> M
+    - [ ] ? Sorting
 - [x] Histogram for the ESG scores
-- [ ] Best featured companies for different categories (E,S,G) 
+- [ ] Best featured companies for different categories (E,S,G) -> J
 - [ ] Implementing map with companies
-- [ ] Company contact form on detail page
-- [ ] Graphs/tables
+- [ ] ? Company contact form on detail page
+- [ ] ? Graphs/tables
 
 
 ## Resources
