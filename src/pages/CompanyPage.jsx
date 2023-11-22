@@ -75,11 +75,11 @@ function CompanyPage() {
                                 <div>{company.location.region}</div>
                             </div>
                             <div className="buttons-wrap">
-                        <Link to={`/company/${id}/edit`}>
-                            <button>Edit Company</button>
-                        </Link>
-                        <button onClick={deleteCompany}>Delete Company</button>
-                    </div>
+                                <Link to={`/company/${id}/edit`}>
+                                    <button>Edit Company</button>
+                                </Link>
+                                <button onClick={deleteCompany}>Delete Company</button>
+                            </div>
                         </div>
                     </div>
 
