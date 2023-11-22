@@ -270,3 +270,10 @@ form button {
     text-align: center;
  }
 }
+
+@media only screen and (max-width: 430px) {
+  .company-card-button-wrap {
+    display: flex;
+    justify-content: center;
+  }
+}

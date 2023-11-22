@@ -72,15 +72,14 @@ An app for investors, regulators, and individuals to explore companies' ESG and 
     - [ ] Social media section
     - [x] Footer
 - [x] Styling with CSS
-- [ ] Making the app responsive
+- [x] Making the app responsive
 
 ## Bonuses
-- [ ] Filtering, search queries
-- [ ] Histogram for the ESG scores
+- [x] Filtering, search queries
+- [x] Histogram for the ESG scores
 - [ ] Best featured companies for different categories (E,S,G) 
 - [ ] Implementing map with companies
 - [ ] Company contact form on detail page
-- [x] Histogram for the ESG scores
 - [ ] Graphs/tables
 
 
