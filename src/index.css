@@ -138,6 +138,10 @@ button:hover {
   margin-bottom: 32px;
 }
 
+.buttons-wrap {
+  display: flex;
+}
+
 .buttons-wrap > *:first-child {
   margin-right: 8px;
 }

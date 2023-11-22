@@ -7,11 +7,11 @@ function ESGIndicator ({ score }) {
     // Defining color based on score
     let color;
     if (score >= good) {
-      color = 'green';
+      color = '#138808';
     } else if (score >= moderate) {
-      color = 'gold';
+      color = '#e1ad01';
     } else {
-      color = 'darkred';
+      color = '#960018';
     }
   
     // Styling for the indicator
@@ -21,7 +21,8 @@ function ESGIndicator ({ score }) {
       height: '20px',
       borderRadius: '5px',
       margin: '5px 0',
-      boxShadow: 'rgba(0, 0, 0, 0.16) 0px 1px 4px'
+      boxShadow: 'rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px',
+      opacity: '0.8'
     };
   
     return (
