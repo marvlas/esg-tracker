@@ -71,7 +71,7 @@ An app for investors, regulators, and individuals to explore companies' ESG and 
     - [x] Navbar (logo, home, favourites, add company, my company)
     - [x] Footer
 - [x] Styling with CSS
-    - [ ] Styling button in favourites page -> M
+    - [x] Styling button in favourites page -> M
     - [ ] Styling histograms colors -> J
 - [x] Making the app responsive
     - [ ] Add mobile navigation (toggle burger menu) -> J

@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from "react"
 import { Link } from "react-router-dom"
 import Filter from "../components/Filter"
 import ESGIndicator from "../components/ESGIndicator"
+import heartIcon from "../assets/hearts-suit.svg"
 
 function HomePage(props) {
     
@@ -57,7 +58,7 @@ function HomePage(props) {
                     : displayedCompanies.map( elm => {
                         return(
                             <div className="company-card" key={elm.id}>
-                                <Link to={`/company/${elm.id}`}>
+                                <Link className="company-logo" to={`/company/${elm.id}`}>
                                     {<img src={elm.logo} alt={elm.name}/>}
                                 </Link>
                                 <div className="company-card-info">
@@ -81,10 +82,11 @@ function HomePage(props) {
                                         <ESGIndicator score={elm.esg.g_index} />
                                     </div>
                                 </div>
-                                <div className="company-card-button-wrap">
+                                <div className="company-card-buttons-wrap">
                                     <button onClick={() => { props.callbackAddFavourites(elm.id) }}>
-                                        Add to my favourites
+                                        <img src={heartIcon} alt="heart-icon" />
                                     </button>
+                                    <Link className="btn" to={`/company/${elm.id}`}>View company</Link>
                                 </div>
                             </div>
                         )

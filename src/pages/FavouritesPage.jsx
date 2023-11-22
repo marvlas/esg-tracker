@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import deleteIcon from "../assets/delete.svg"
 
 function FavouritesPage(props){
 
@@ -8,13 +9,17 @@ function FavouritesPage(props){
             <main className="companies-list favourites">
                 {props.favouritesCompanies.map(elm => {
                     return(
-                        <>
-                            <Link to={`/company/${elm.id}`} className="company-card">
-                                <h2>{elm.name}</h2>
+                        <div className="company-card" key={elm.id}>
+                            <Link className="company-logo" to={`/company/${elm.id}`} >
                                 <img src={elm.logo} alt={elm.name} />
                             </Link>
-                            <button onClick={() =>{props.callbackToDelete(elm.id)}}>Remove from favourites</button>
-                        </>
+                            <h2>{elm.name}</h2>
+                            <div className="company-card-buttons-wrap">
+                                <button onClick={() =>{props.callbackToDelete(elm.id)}}><img src={deleteIcon} alt="delete" /></button>
+                                <Link className="btn" to={`/company/${elm.id}`}>View company</Link>
+                            </div>
+
+                        </div>
                     )
                 })}
             </main>
