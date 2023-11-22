@@ -39,6 +39,7 @@
     font-weight: 600;
 }
 
+
 .Navbar ul > .favourites-item > a:hover {
     background-color: var(--secondary-color);
     color: var(--primary-color);
@@ -46,5 +47,21 @@
 
 .Navbar .favourites-item img {
     margin-right: 4px;
-    transform: translateY(2px);
+}
+
+.non-animated-icon {
+    transform: scale(1) translateY(2px);;
+    transition: fill 0.3s ease, transform 0.3s ease;
+}
+
+.non-animated-icon path {
+    fill: var(--primary-color);
+}
+
+.animated-icon {
+    transform: scale(2) translateY(2px);
+}
+
+.animated-icon path {
+    fill: var(--secondary-color);
 }
