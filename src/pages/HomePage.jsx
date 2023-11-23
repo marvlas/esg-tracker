@@ -9,7 +9,7 @@ import MapComponent from "../components/MapComponent"
 function HomePage(props) {
     
     const apiDataUrl = import.meta.env.VITE_API_URL
-    const [companies, setCompanies ] = useState(null)
+    const [companies, setCompanies ] = useState([])
     const [displayedCompanies, setDisplayedCompanies ] = useState(null)
     
     // fetch API companies data
@@ -144,7 +144,7 @@ function HomePage(props) {
                 } 
             </main>
 
-            <MapComponent />
+            <MapComponent companies={companies} />
 
         </>
     )

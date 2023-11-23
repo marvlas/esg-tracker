@@ -310,6 +310,10 @@ form button {
   background-color: #960018;
 }
 
+#MapComponent {
+  margin-top: 64px;
+}
+
 @media only screen and (max-width: 960px) {
   .companies-list {
     gap: 24px;
