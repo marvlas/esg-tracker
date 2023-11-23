@@ -36,41 +36,6 @@ function HomePage(props) {
         getApiData()
     }, [])
 
-    // Sort by the total ESG score
-    const sortByESG = () => {
-        const sortedCompanies = [...displayedCompanies]
-        if (sortOrderTotal === 'asc') {
-            sortedCompanies.sort((a, b) =>  (a.esg.e_index + a.esg.s_index + a.esg.g_index) / 3 -
-            (b.esg.e_index + b.esg.s_index + b.esg.g_index) / 3)
-            setSortOrderTotal('dsc')
-        } else {
-            sortedCompanies.sort(
-                (a, b) =>
-                    (b.esg.e_index + b.esg.s_index + b.esg.g_index) / 3 -
-                    (a.esg.e_index + a.esg.s_index + a.esg.g_index) / 3
-            );
-            setSortOrderTotal('asc');
-        }
-        setDisplayedCompanies(sortedCompanies)
-    }
-
-    // Sort by the individual ESG scores 
-    const sortByIndividualESG = (scoreType) => {
-        const sortedCompanies = [...displayedCompanies]
-
-        sortedCompanies.sort((a, b) => {
-            const scoreA = a.esg[scoreType];
-            const scoreB = b.esg[scoreType];
-      
-            return sortOrder[scoreType] === 'asc' ? scoreA - scoreB : scoreB - scoreA;
-          });
-      
-          setDisplayedCompanies(sortedCompanies);
-      
-          setSortOrder((prevSortOrder) => ({...prevSortOrder,[scoreType]: prevSortOrder[scoreType] === 'asc' ? 'desc' : 'asc',}));
-    }
-
-
 
 
     // Sort by the total ESG score
