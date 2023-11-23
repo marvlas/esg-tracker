@@ -12,6 +12,9 @@ function HomePage(props) {
     const apiDataUrl = import.meta.env.VITE_API_URL
     const [companies, setCompanies ] = useState([])
     const [displayedCompanies, setDisplayedCompanies ] = useState(null)
+    const [countryFilter, setCountryFilter] = useState('all')
+    const [industryFilter, setIndustryFilter] = useState('all')
+    const [esgFilter, setEsgFilter] = useState('all')
     
     // fetch API companies data
     const getApiData = () => {
@@ -31,57 +34,93 @@ function HomePage(props) {
         getApiData()
     }, [])
 
+    const countriesFilter=(companiesArray,countryName)=>companiesArray.filter(company=>company.location.country===countryName)
+    const industriesFilter=(companiesArray,industryName)=>companiesArray.filter(company=>company.industry===industryName)
+    const esgFilterFunc=(companiesArray,esgValue)=>{
+        const calcAverage = elm => Math.round((elm.esg.e_index + elm.esg.s_index + elm.esg.g_index) / 3)
+        return companiesArray.filter(elm => {
+            const esgIndex = calcAverage(elm)
+            switch (esgValue) {
+                case "90-100":
+                    return esgIndex > 90 && esgIndex <= 100 
+                case "80-90":
+                    return esgIndex > 80 && esgIndex <= 90
+                case "70-80":
+                    return esgIndex > 70 && esgIndex <= 80
+                case "60-70":
+                    return esgIndex > 60 && esgIndex <= 70
+                case "50-60":
+                    return esgIndex > 50 && esgIndex <= 60
+                case "40-50":
+                    return esgIndex > 40 && esgIndex <= 50
+                case "0-40":
+                    return esgIndex > 0 && esgIndex <= 40
+            }
+        })
+    }
+
     // filter countries
     const filterCountries = (countryName) => {
+        const shouldAddCompanyFilter=industryFilter!=="all"
+        const shouldAddEsgFilter=esgFilter!=="all"
+  
+        console.log(shouldAddCompanyFilter,shouldAddEsgFilter)
         if(countryName !== "all") {
-            const filteredCompanies = companies.filter((elm) => {
-                return elm.location.country === countryName
-            })
+            setCountryFilter(countryName)
+            let filteredCompanies = countriesFilter(companies,countryName)
+            console.log(filteredCompanies,"after country filter")
+            if(shouldAddCompanyFilter){
+                filteredCompanies=industriesFilter(filteredCompanies,industryFilter)
+            }
+            console.log(filteredCompanies,"after compnay filter")
+            if(shouldAddEsgFilter){
+                filteredCompanies=esgFilterFunc(filteredCompanies,esgFilter)
+            }
+            console.log(filteredCompanies,"after esg filter")
             setDisplayedCompanies(filteredCompanies)
         } else {
+            setCountryFilter('all')
             setDisplayedCompanies(companies)
         }
     }
 
     // filter industries
     const filterIndustries = (industryName) => {
+        const shouldAddCountryFilter=countryFilter!=="all"
+        const shouldAddEsgFilter=esgFilter!=="all"
         if(industryName !== "all") {
-            const filteredCompanies = companies.filter((elm) => {
-                return elm.industry === industryName
-            })
+            setIndustryFilter(industryName)
+            let filteredCompanies = industriesFilter(companies,industryName)
+            if(shouldAddEsgFilter){
+                filteredCompanies=esgFilterFunc(filteredCompanies,esgFilter)
+            }
+            if(shouldAddCountryFilter){
+                filteredCompanies=countriesFilter(filteredCompanies,countryFilter)
+            }
             setDisplayedCompanies(filteredCompanies)
         } else {
+            setIndustryFilter('all')
             setDisplayedCompanies(companies)
         }
     }
 
     // filter ESG
     const filterEsg = (esgValue) => {
-
-            const calcAverage = elm => Math.round((elm.esg.e_index + elm.esg.s_index + elm.esg.g_index) / 3)
+            const shouldAddCountryFilter=countryFilter!=="all"
+            const shouldAddIndustryFilter=industryFilter!=="all"
 
             if (esgValue !== "all") {
-                const filteredCompanies = companies.filter(elm => {
-                    const esgIndex = calcAverage(elm)
-                    switch (esgValue) {
-                        case "90-100":
-                            return esgIndex > 90 && esgIndex <= 100 
-                        case "80-90":
-                            return esgIndex > 80 && esgIndex <= 90
-                        case "70-80":
-                            return esgIndex > 70 && esgIndex <= 80
-                        case "60-70":
-                            return esgIndex > 60 && esgIndex <= 70
-                        case "50-60":
-                            return esgIndex > 50 && esgIndex <= 60
-                        case "40-50":
-                            return esgIndex > 40 && esgIndex <= 50
-                        case "0-40":
-                            return esgIndex > 0 && esgIndex <= 40
-                    }
-                })
+                setEsgFilter(esgValue)
+                let filteredCompanies = esgFilterFunc(companies, esgValue)
+                if(shouldAddCountryFilter){
+                    filteredCompanies=countriesFilter(filteredCompanies,countryFilter)
+                }
+                if(shouldAddIndustryFilter){
+                    filteredCompanies=industriesFilter(filteredCompanies,industryFilter)
+                }
                 setDisplayedCompanies(filteredCompanies)
             } else {
+                setEsgFilter('all')
                 setDisplayedCompanies(companies)
             }
         }
@@ -105,31 +144,29 @@ function HomePage(props) {
                     : displayedCompanies.map( elm => {
                         return(
                             <div className="company-card" key={elm.id}>
-                                <Link className="company-logo" to={`/company/${elm.id}`}>
-                                    {<img src={elm.logo} alt={elm.name}/>}
-                                </Link>
                                 <div className="company-card-info">
                                     <div>
                                         <h3>{elm.name}</h3>
-                                        <div><span>Market Cap:</span>${elm.marketCap.toLocaleString()}</div>
+                                        <h4><span>Market Cap:</span>${elm.marketCap.toLocaleString()}</h4>
+                                        <h4><span>Country:</span>{elm.location.country}</h4>
+                                        <h4><span>Industry:</span>{elm.industry}</h4>
                                     </div>
-                                    <div>
-                                        <h4 className="location">{elm.location.country}</h4>
-                                        <h4>{elm.industry}</h4>
-                                    </div>
+                                    <Link className="company-logo" to={`/company/${elm.id}`}>
+                                        {<img src={elm.logo} alt={elm.name}/>}
+                                    </Link>
                                 </div>
                                 <div className="esg">
                                     <div>
-                                        <p>Environmental score:</p>
-                                        <ESGIndicator score={elm.esg.e_index} />
-                                        <p>Social score:</p>
-                                        <ESGIndicator score={elm.esg.s_index} />
-                                        <p>Governance score:</p>
-                                        <ESGIndicator score={elm.esg.g_index} />
+                                        <h5>Environmental score:</h5>
+                                            <ESGIndicator score={elm.esg.e_index} />
+                                        <h5>Social score:</h5>
+                                            <ESGIndicator score={elm.esg.s_index} />
+                                        <h5>Governance score:</h5>
+                                            <ESGIndicator score={elm.esg.g_index} />
                                     </div>
                                     <div className="average-score">
-                                        <h2>Weighted average ESG score:</h2>
-                                        <h2>{Math.round((elm.esg.e_index + elm.esg.s_index + elm.esg.g_index)/3)}</h2>
+                                        <div>Weighted average ESG score:</div>
+                                        <div className="value">{Math.round((elm.esg.e_index + elm.esg.s_index + elm.esg.g_index)/3)}</div>
                                     </div>
                                 </div>
                                 <div className="company-card-buttons-wrap">
