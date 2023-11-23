@@ -10,17 +10,17 @@ function Icons () {
                 <div className="icons-card">
                     <img src={environmentIcon} alt="" />
                     <h2>Environment</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam, veritatis nisi voluptatem nam rerum distinctio consectetur rem? Sequi, voluptas rem?</p>
+                    <p>The environmental score is a score out of 100 that is calculated based on an evaluation of various criteria, such as biodiversity, climate strategy, and water operations. The higher the score, the better</p>
                 </div>
                 <div className="icons-card">
                     <img src={socialIcon} alt="" />
                     <h2>Social</h2>
-                    <p>Sapiente iusto expedita officiis libero at iste deserunt qui dignissimos. Consequuntur veritatis nisi voluptatem nam, qui odit.</p>
+                    <p>The social score is score out of 100 that is calculated based on an evaluation of various criteria, such as human rights, labor practices, and community impact. The higher the score, the better</p>
                 </div>
                 <div className="icons-card">
                     <img src={governanceIcon} alt="" />
                     <h2>Governance</h2>
-                    <p>Eos, autem nesciunt nostrum ipsum harum quia reprehenderit accusantium! Eos sunt quos repellendus est animi quibusdam maiores ab tempora ex, i dolorum!</p>
+                    <p>The governance score is a score out of 100 that is calculated based on an evaluation of various criteria, such as corporate governance, compliance, and supply chain practices. The higher the score, the better</p>
                 </div>
             </div>
         </div>
