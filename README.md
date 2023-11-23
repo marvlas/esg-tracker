@@ -81,7 +81,7 @@ An app for investors, regulators, and individuals to explore companies' ESG and 
 ## Bonuses
 - [x] Filtering, search queries
     - [x] Industry, ESG -> M
-    - [ ] Heart effect, when company adds to the favourites -> M
+    - [x] Heart effect, when company adds to the favourites -> M
     - [ ] ? Sorting
 - [x] Histogram for the ESG scores
 - [ ] Best featured companies for different categories (E,S,G) -> J

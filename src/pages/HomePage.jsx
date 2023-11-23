@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import Filter from "../components/Filter"
 import ESGIndicator from "../components/ESGIndicator"
 import heartIcon from "../assets/hearts-suit.svg"
+import MapComponent from "../components/MapComponent"
 
 function HomePage(props) {
     
@@ -96,7 +97,6 @@ function HomePage(props) {
                 filterEsg={filterEsg}
             />
 
-
             <main className="companies-list container">
                 { displayedCompanies === null
                     ? <p>Loading...</p>
@@ -138,6 +138,9 @@ function HomePage(props) {
                     })
                 } 
             </main>
+
+            <MapComponent />
+
         </>
     )
 }
