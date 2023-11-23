@@ -19,6 +19,8 @@ const [eScore, setEScore] = useState("")
 const [sScore, setSScore] = useState("")
 const [gScore, setGScore] = useState("")
 const [marketCap, setMarketCap] = useState("")
+const [latitude, setLatitude] = useState("")
+const [longitude, setLongitude] = useState("")
 
 const navigate = useNavigate()
 
@@ -35,6 +37,8 @@ const handleSubmit = (e) => {
             city: addressCity,
             address: addressStreet,
             postcode: addressPostcode,
+            latitude: latitude,
+            longitude: longitude
         },
         industry: industry,
         esg: {
@@ -120,7 +124,7 @@ const handleSubmit = (e) => {
                         onChange={(e) => { setAddressCity(e.target.value) }} />
                 </label>
 
-                {/* Drop down menu */}
+           
                 <label>
                     Address: country 
                     <input
@@ -131,8 +135,8 @@ const handleSubmit = (e) => {
                         onChange={(e) => { setAddressCountry(e.target.value) }} />
                 </label>
 
-                {/* Drop down menu here */}
-                   <label>
+                
+                <label>
                     Address: region 
                     <input
                         type="text"
@@ -142,7 +146,26 @@ const handleSubmit = (e) => {
                         onChange={(e) => { setAddressRegion(e.target.value) }} />
                 </label>
 
-                {/* Drop down menu here */}
+                <label>
+                    Address: latitude
+                    <input
+                        type="number"
+                        name="latitude"
+                        required={true}
+                        value={latitude}
+                        onChange={(e) => { setLatitude(e.target.value) }} />
+                </label>
+
+                <label>
+                    Address: longitude
+                    <input
+                        type="number"
+                        name="longitude"
+                        required={true}
+                        value={longitude}
+                        onChange={(e) => { setLongitude(e.target.value) }} />
+                </label>
+
                 <label>
                     Industry
                     <input
@@ -153,7 +176,7 @@ const handleSubmit = (e) => {
                         onChange={(e) => { setIndustry(e.target.value) }} />
                 </label>
 
-                {/* Drop down menu here */}
+              
                 <label>
                     Environmental Score
                     <input
@@ -164,7 +187,7 @@ const handleSubmit = (e) => {
                         onChange={(e) => { setEScore(e.target.value) }} />
                 </label>
 
-                {/* Drop down menu here */}
+         
                 <label>
                     Social Score
                     <input
@@ -175,7 +198,7 @@ const handleSubmit = (e) => {
                         onChange={(e) => { setSScore(e.target.value) }} />
                 </label>
 
-                {/* Drop down menu here */}
+             
                 <label>
                     Governance Score
                     <input
