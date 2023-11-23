@@ -82,11 +82,10 @@ An app for investors, regulators, and individuals to explore companies' ESG and 
 - [x] Filtering, search queries
     - [x] Industry, ESG -> M
     - [x] Heart effect, when company adds to the favourites -> M
-    - [ ] ? Sorting
 - [x] Histogram for the ESG scores
 
 ## Minor fixes
-- [ ] Add 10 companies to API -> J
+- [x] Add 10 companies to API -> J
 - [ ] Best featured companies for different categories (E,S,G) -> J
 - [x] Implementing map with companies -> M
 - [ ] Homepage intro module (icons)
@@ -94,6 +93,9 @@ An app for investors, regulators, and individuals to explore companies' ESG and 
     - [x] JSX structure -> M
 - [ ] Add ESG index to company page -> J
 - [ ] Adjust edit/creat forms style -> M
+    - [ ] JSX structure -> M
+- [x] Add ESG index to company page -> J
+- [ ] Adjust edit/creat forms style
 
 
 ## Resources
