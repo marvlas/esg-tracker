@@ -73,6 +73,8 @@ An app for investors, regulators, and individuals to explore companies' ESG and 
 - [x] Styling with CSS
     - [x] Styling button in favourites page -> M
     - [x] Styling histograms colors -> J
+    - [ ] Homepage Cards
+    - [ ] Company page
 - [x] Making the app responsive
     - [x] Add mobile navigation (toggle burger menu) -> J
 
@@ -82,10 +84,16 @@ An app for investors, regulators, and individuals to explore companies' ESG and 
     - [x] Heart effect, when company adds to the favourites -> M
     - [ ] ? Sorting
 - [x] Histogram for the ESG scores
+
+## Minor fixes
+- [ ] Add 10 companies to API -> J
 - [ ] Best featured companies for different categories (E,S,G) -> J
-- [ ] Implementing map with companies
-- [ ] ? Company contact form on detail page
-- [ ] ? Graphs/tables
+- [ ] Implementing map with companies -> M
+- [ ] Homepage intro module (icons)
+    - [ ] Copyrighting -> J
+    - [ ] JSX structure -> M
+- [ ] Add ESG index to company page -> J
+- [ ] Adjust edit/creat forms style
 
 
 ## Resources
