@@ -15,8 +15,6 @@ function HomePage(props) {
     const [countryFilter, setCountryFilter] = useState('all')
     const [industryFilter, setIndustryFilter] = useState('all')
     const [esgFilter, setEsgFilter] = useState('all')
-    const [sortOrderTotal, setSortOrderTotal] = useState('asc')
-    const [sortOrder, setSortOrder] = useState({e_index:'asc', s_index: 'asc', g_index: 'asc'})
     
     // fetch API companies data
     const getApiData = () => {
@@ -35,44 +33,6 @@ function HomePage(props) {
     useEffect( () => {
         getApiData()
     }, [])
-
-
-
-    // Sort by the total ESG score
-    const sortByESG = () => {
-        const sortedCompanies = [...displayedCompanies]
-        if (sortOrderTotal === 'asc') {
-            sortedCompanies.sort((a, b) =>  (a.esg.e_index + a.esg.s_index + a.esg.g_index) / 3 -
-            (b.esg.e_index + b.esg.s_index + b.esg.g_index) / 3)
-            setSortOrderTotal('dsc')
-        } else {
-            sortedCompanies.sort(
-                (a, b) =>
-                    (b.esg.e_index + b.esg.s_index + b.esg.g_index) / 3 -
-                    (a.esg.e_index + a.esg.s_index + a.esg.g_index) / 3
-            );
-            setSortOrderTotal('asc');
-        }
-        setDisplayedCompanies(sortedCompanies)
-    }
-
-    // Sort by the individual ESG scores 
-    const sortByIndividualESG = (scoreType) => {
-        const sortedCompanies = [...displayedCompanies]
-
-        sortedCompanies.sort((a, b) => {
-            const scoreA = a.esg[scoreType];
-            const scoreB = b.esg[scoreType];
-      
-            return sortOrder[scoreType] === 'asc' ? scoreA - scoreB : scoreB - scoreA;
-          });
-      
-          setDisplayedCompanies(sortedCompanies);
-      
-          setSortOrder((prevSortOrder) => ({...prevSortOrder,[scoreType]: prevSortOrder[scoreType] === 'asc' ? 'desc' : 'asc',}));
-    }
-
-
 
 
     const countriesFilter=(companiesArray,countryName)=>companiesArray.filter(company=>company.location.country===countryName)
@@ -177,12 +137,6 @@ function HomePage(props) {
                 filterIndustries={filterIndustries} 
                 filterEsg={filterEsg}
             />
-
-            <button onClick={() => sortByIndividualESG('e_index')}>Sort by Environmental Score</button>
-            <button onClick={() => sortByIndividualESG('s_index')}>Sort by Social Score</button>
-            <button onClick={() => sortByIndividualESG('g_index')}>Sort by Governance Score</button>
-
-            <button onClick={sortByESG}>Sort by total ESG Score</button>
 
             <main className="companies-list container">
                 { displayedCompanies === null
