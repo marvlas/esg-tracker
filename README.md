@@ -86,7 +86,7 @@ An app for investors, regulators, and individuals to explore companies' ESG and 
 
 ## Minor fixes
 - [x] Add 10 companies to API -> J
-- [ ] Best featured companies for different categories (E,S,G) -> J
+- [x] Best featured companies for different categories (E,S,G) -> J
 - [x] Implementing map with companies -> M
 - [ ] Homepage intro module (icons)
     - [x] Copyrighting -> J
