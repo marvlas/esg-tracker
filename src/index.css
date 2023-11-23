@@ -157,9 +157,9 @@ button:hover, .btn:hover {
 }
 
 .company-card .esg {
-  background: #f2f2f2;
-  padding: 12px;
-  border-radius: 4px;
+  padding-top: 16px;
+  margin-top: 8px;
+  border-top: 1.5px solid #cadadb;
   font-size: 12px;
   margin-top: 24px;
   color: var(--dark-grey);
@@ -404,11 +404,11 @@ form button {
 }
 
 .esg-good {
-  background-color: #b2e191;
+  background-color: #B1C998;
 }
 
 .esg-moderate {
-  background-color: #e69c70;
+  background-color: #e6bf70;
 }
 
 .esg-bad {
