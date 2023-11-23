@@ -7,13 +7,21 @@ const MapComponent = (props) => {
   const [locations, setLocations] = useState([]);
 
   const findLocations = () => {
-    if (props.companies != []) {
-      const addedLocations = props.companies.map((elm) => ({
-        id: elm.id,
-        position: [elm.location.latitude, elm.location.longitude],
-        title: elm.name
-      }));
-      setLocations(addedLocations);
+    if (props.companies.length !== 0) {
+      const addedLocations = props.companies.map((elm) => {
+        if (elm.location && elm.location.latitude && elm.location.longitude) {
+          return {
+            id: elm.id,
+            position: [elm.location.latitude, elm.location.longitude],
+            title: elm.name
+          };
+        }
+        return null;
+      });
+
+      const filteredLocations = addedLocations.filter(location => location !== null);
+
+      setLocations(filteredLocations);
     }
   };
 
