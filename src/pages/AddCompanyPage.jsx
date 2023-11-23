@@ -57,7 +57,7 @@ const handleSubmit = (e) => {
     return (
         <main className="form-container">
 
-            <h1>Add Company Below</h1>
+            <h1>Add Company</h1>
 
             <form onSubmit={handleSubmit}>
 
