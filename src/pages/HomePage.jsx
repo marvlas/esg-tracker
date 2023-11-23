@@ -5,6 +5,7 @@ import Filter from "../components/Filter"
 import ESGIndicator from "../components/ESGIndicator"
 import heartIcon from "../assets/hearts-suit.svg"
 import MapComponent from "../components/MapComponent"
+import Intro from "../components/Intro"
 
 function HomePage(props) {
     
@@ -84,20 +85,19 @@ function HomePage(props) {
                 setDisplayedCompanies(companies)
             }
         }
-    
-    
 
     return(
         <>
-            <div className="centered">
-                <h1>Companies</h1>
-            </div>
+
+            <Intro />
+
 
             <Filter 
                 companies={companies} filterCountries={filterCountries} 
                 filterIndustries={filterIndustries} 
                 filterEsg={filterEsg}
             />
+
 
             <main className="companies-list container">
                 { displayedCompanies === null
