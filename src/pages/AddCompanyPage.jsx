@@ -84,7 +84,7 @@ const handleSubmit = (e) => {
                 <label>
                     Logo (optional)
                     <input
-                        type="url"
+                        type="text"
                         name="logo"
                         value={logo}
                         onChange={(e) => { setLogo(e.target.value) }} />
