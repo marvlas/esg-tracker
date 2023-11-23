@@ -193,7 +193,7 @@ button:hover, .btn:hover {
 
 .company {
   display: flex;
-  gap: 64px;
+  gap: 48px;
   margin-bottom: 32px;
 }
 
@@ -232,6 +232,7 @@ button:hover, .btn:hover {
   border-radius: 8px;
   background-color: var(--light-grey);
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;  
+  max-height: 520px;
 }
 
 .company img {
@@ -244,6 +245,18 @@ button:hover, .btn:hover {
   flex-basis: 60%
 }
 
+.company .esg .histograms {
+  flex-basis: 60%;
+}
+
+.company .esg .histograms p {
+  font-weight: 600;
+}
+
+.company .esg .average-score {
+  flex-basis: 40%;
+}
+
 .company p {
   font-weight: 400;
   line-height: 1.5;
@@ -252,8 +265,15 @@ button:hover, .btn:hover {
 
 .company .info-wrap-heading {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
+  border-bottom: 1px solid #cadadb;
+  margin-bottom: 16px;
+}
+
+.company .info-wrap-heading span {
+  width: 108px;
 }
 
 .company h2 {
@@ -267,17 +287,15 @@ button:hover, .btn:hover {
   font-weight: 400;
 }
 
-.company h2:nth-child(2) {
-  font-style: italic;
-}
-
 .company .esg {
   margin-bottom: 24px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  background-color: white;
+  padding: 16px;
+  border-radius: 4px;
 }
-
 
 .company-card .esg .value {
   font-weight: 600;
@@ -312,6 +330,7 @@ button:hover, .btn:hover {
 
 .average-score h2:nth-child(2) {
   font-size: 88px;
+  letter-spacing: -2px;
 }
 
 .company .location {
@@ -321,6 +340,11 @@ button:hover, .btn:hover {
 
 .company .location > div {
   margin-bottom: 4px;
+}
+
+.link {
+  font-weight: 500;
+  text-decoration: underline;
 }
 
 .form-container {

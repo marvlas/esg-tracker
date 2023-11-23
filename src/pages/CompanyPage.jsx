@@ -52,12 +52,12 @@ function CompanyPage() {
                                 <h1>{company.name}</h1>
                                 <div>
                                     <h2><span>Market Cap:</span>${company.marketCap.toLocaleString()}</h2>
-                                    <h2>{company.industry}</h2>
+                                    <h2><span>Industry:</span>{company.industry}</h2>
                                 </div>
                             </div>
                             <p>{company.description}</p>
                             <div className="esg">
-                                <div>
+                                <div className="histograms">
                                     <p>Environmental score:</p>
                                     <ESGIndicator score={company.esg.e_index} />
                                     <p>Social score:</p>
@@ -68,7 +68,7 @@ function CompanyPage() {
                                 <div className="average-score">
                                     <h2>Weighted average ESG score:</h2>
                                     <h2>{Math.round((company.esg.e_index + company.esg.s_index + company.esg.g_index) / 3)}</h2>
-                                    <h3>For more information about this company's sustainability activities, click here to explore further details</h3>
+                                    <h3>For more information about this company's sustainability activities, <Link className="link" to="#">click here</Link> to explore further details</h3>
                                 </div>
                             </div>
                             <div className="location">
