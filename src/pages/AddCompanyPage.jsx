@@ -42,9 +42,9 @@ const handleSubmit = (e) => {
         },
         industry: industry,
         esg: {
-            e_index: eScore,
-            s_index: sScore,
-            g_index: gScore,
+            e_index: parseInt(eScore),
+            s_index: parseInt(sScore),
+            g_index: parseInt(gScore)
         },
         marketCap: marketCap  
     }
@@ -180,7 +180,7 @@ const handleSubmit = (e) => {
                 <label>
                     Environmental Score
                     <input
-                        type="number"
+                        type="text"
                         name="env score"
                         required={true}
                         value={eScore}
@@ -191,7 +191,7 @@ const handleSubmit = (e) => {
                 <label>
                     Social Score
                     <input
-                        type="number"
+                        type="text"
                         name="soc score"
                         required={true}
                         value={sScore}
@@ -202,7 +202,7 @@ const handleSubmit = (e) => {
                 <label>
                     Governance Score
                     <input
-                        type="number"
+                        type="text"
                         name="gov score"
                         required={true}
                         value={gScore}

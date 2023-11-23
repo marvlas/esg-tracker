@@ -62,9 +62,9 @@ const handleFormSubmit = (e) => {
         },
         industry: industry,
         esg: {
-            e_index: eScore,
-            s_index: sScore,
-            g_index: gScore,
+            e_index: parseInt(eScore),
+            s_index: parseInt(sScore),
+            g_index: parseInt(gScore),
         },
         marketCap: marketCap  
     }
@@ -142,7 +142,7 @@ const handleFormSubmit = (e) => {
                         onChange={(e) => { setAddressCity(e.target.value) }} />
                 </label>
 
-                {/* Drop down menu */}
+               
                 <label>
                     Address: country
                     <input
@@ -153,7 +153,7 @@ const handleFormSubmit = (e) => {
                         onChange={(e) => { setAddressCountry(e.target.value) }} />
                 </label>
 
-                {/* Drop down menu here */}
+              
                 <label>
                     Address: region
                     <input
@@ -164,7 +164,7 @@ const handleFormSubmit = (e) => {
                         onChange={(e) => { setAddressRegion(e.target.value) }} />
                 </label>
 
-                {/* Drop down menu here */}
+             
                 <label>
                     Industry
                     <input
@@ -175,33 +175,33 @@ const handleFormSubmit = (e) => {
                         onChange={(e) => { setIndustry(e.target.value) }} />
                 </label>
 
-                {/* Drop down menu here */}
+                
                 <label>
                     Environmental Score
                     <input
-                        type="number"
+                        type="text"
                         name="env score"
                         required={true}
                         value={eScore}
                         onChange={(e) => { setEScore(e.target.value) }} />
                 </label>
 
-                {/* Drop down menu here */}
+            
                 <label>
                     Social Score
                     <input
-                        type="number"
+                        type="text"
                         name="soc score"
                         required={true}
                         value={sScore}
                         onChange={(e) => { setSScore(e.target.value) }} />
                 </label>
 
-                {/* Drop down menu here */}
+           
                 <label>
                     Governance Score
                     <input
-                        type="number"
+                        type="text"
                         name="gov score"
                         required={true}
                         value={gScore}
