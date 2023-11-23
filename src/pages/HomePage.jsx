@@ -131,6 +131,7 @@ function HomePage(props) {
 
             <Intro />
 
+            <h2 className="centered list-title">Companies</h2>
 
             <Filter 
                 companies={companies} filterCountries={filterCountries} 

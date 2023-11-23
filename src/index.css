@@ -89,6 +89,12 @@ button:hover, .btn:hover {
   text-align: center;
 }
 
+.list-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 48px;
+}
+
 .companies-list {
   display: flex;
   flex-direction: row;
@@ -116,7 +122,6 @@ button:hover, .btn:hover {
   max-height: 80px;
   margin-bottom: 32px;
 }
-
 
 .company-card-info {
   display: flex;
@@ -201,11 +206,17 @@ button:hover, .btn:hover {
 }
 
 .filters {
-  background-color: var(--primary-color);
+  background-color: var(--light-grey);
+  color: var(--dark-grey);
+  border: none;
   margin-bottom: 16px;
   margin-right: 4px;
-  padding: 4px;
+  padding: 8px;
   border-radius: 4px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;  
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  margin-right: 16px;
 }
 
 .filter-header {
