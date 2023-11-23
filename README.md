@@ -89,13 +89,11 @@ An app for investors, regulators, and individuals to explore companies' ESG and 
 - [ ] Best featured companies for different categories (E,S,G) -> J
 - [x] Implementing map with companies -> M
 - [ ] Homepage intro module (icons)
-    - [ ] Copyrighting -> J
+    - [x] Copyrighting -> J
     - [x] JSX structure -> M
-- [ ] Add ESG index to company page -> J
-- [ ] Adjust edit/creat forms style -> M
-    - [ ] JSX structure -> M
 - [x] Add ESG index to company page -> J
-- [ ] Adjust edit/creat forms style
+- [ ] Adjust edit/creat forms style -> M
+
 
 
 ## Resources
