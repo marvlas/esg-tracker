@@ -57,7 +57,7 @@ function HomePage(props) {
     // filter ESG
     const filterEsg = (esgValue) => {
 
-            const calcAverage = elm => (elm.esg.e_index + elm.esg.s_index + elm.esg.g_index) / 3
+            const calcAverage = elm => Math.round((elm.esg.e_index + elm.esg.s_index + elm.esg.g_index) / 3)
 
             if (esgValue !== "all") {
                 const filteredCompanies = companies.filter(elm => {
@@ -84,6 +84,8 @@ function HomePage(props) {
                 setDisplayedCompanies(companies)
             }
         }
+    
+    
 
     return(
         <>
@@ -111,20 +113,23 @@ function HomePage(props) {
                                         <h3>{elm.name}</h3>
                                         <div><span>Market Cap:</span>${elm.marketCap.toLocaleString()}</div>
                                     </div>
-                                    <h4 className="location">{elm.location.country}</h4>
+                                    <div>
+                                        <h4 className="location">{elm.location.country}</h4>
+                                        <h4>{elm.industry}</h4>
+                                    </div>
                                 </div>
                                 <div className="esg">
                                     <div>
                                         <p>Environmental score:</p>
                                         <ESGIndicator score={elm.esg.e_index} />
-                                    </div>
-                                    <div>
                                         <p>Social score:</p>
                                         <ESGIndicator score={elm.esg.s_index} />
-                                    </div>
-                                    <div>
                                         <p>Governance score:</p>
                                         <ESGIndicator score={elm.esg.g_index} />
+                                    </div>
+                                    <div className="average-score">
+                                        <h2>Weighted average ESG score:</h2>
+                                        <h2>{Math.round((elm.esg.e_index + elm.esg.s_index + elm.esg.g_index)/3)}</h2>
                                     </div>
                                 </div>
                                 <div className="company-card-buttons-wrap">

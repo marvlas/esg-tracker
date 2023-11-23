@@ -8,7 +8,7 @@ function Filter (props) {
 
     return (
         <div className="container">
-            <h2>Filters</h2>
+            <h2 className="filter-header">Filters</h2>
             <select className="filters"
                 onChange={(e) => {props.filterCountries(e.target.value)}}>
 

@@ -50,6 +50,67 @@
 
 .Navbar .favourites-item img {
     margin-right: 4px;
+    transform: translateY(2px);
+}
+
+
+.hamburger-logo {
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .Navbar ul {
+        display: none;
+    }
+    
+    .hamburger-logo {
+        height: 32px;
+        display: inline-block;
+
+    }
+    
+    .hamburger-nav {
+        background-color: var(--primary-color);
+        width: 50%;
+        padding: 20px;
+        text-align: right;
+        position: fixed;
+        right: 0;
+        top: 60px;
+        z-index: 999;
+    }
+    
+    .hamburger-nav ul > li {
+        list-style: none;
+        margin-left: 32px;
+        margin-bottom: 24px;
+        padding-right: 32px;
+    }
+    
+    .hamburger-nav ul > li > a {
+        color: white
+    }
+    
+    .hamburger-nav ul > li > a:hover {
+        color: var(--secondary-color);
+    }
+    
+    .hamburger-nav ul > .favourites-item {
+      margin-top: 32px 
+    }
+    
+    .hamburger-nav ul > .favourites-item > a{
+        background-color: var(--accent-color);
+        padding: 8px;
+        border-radius: 4px;
+        color: var(--primary-color);
+        font-weight: 600;
+    }
+    
+    .hamburger-nav ul > .favourites-item > a:hover {
+        background-color: var(--secondary-color);
+        color: var(--primary-color);
+    }
 }
 
 .non-animated-icon {

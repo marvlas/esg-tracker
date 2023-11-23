@@ -5,7 +5,7 @@ function FavouritesPage(props){
 
     return (
         <div className="container">
-            <h1>This is the favourites page</h1>
+            <h1>My favourites</h1>
             <main className="companies-list favourites">
                 {props.favouritesCompanies.map(elm => {
                     return(

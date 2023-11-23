@@ -102,8 +102,12 @@ button:hover, .btn:hover {
 .company-card h4 {
   font-size: 16px;
   font-weight: 600;
-  margin-bottom: 4px;
+  margin-bottom: 16px;
   display: flex;
+}
+
+.company-card h4:nth-child(2) {
+  font-style: italic;
 }
 
 .company-card h4 img {
@@ -122,10 +126,14 @@ button:hover, .btn:hover {
   font-size: 12px;
   margin-top: 24px;
   color: var(--dark-grey);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .company-card .esg div {
   margin-bottom: 4px;
+  width: 100%
 }
 
 .company-card-buttons-wrap {
@@ -154,6 +162,19 @@ button:hover, .btn:hover {
 
 .buttons-wrap > *:first-child {
   margin-right: 8px;
+}
+
+.filters {
+  background-color: var(--primary-color);
+  margin-bottom: 16px;
+  margin-right: 4px;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.filter-header {
+  font-weight: 600;
+  margin-bottom: 8px;
 }
 
 .company .img-wrap {
@@ -189,7 +210,7 @@ button:hover, .btn:hover {
 }
 
 .company h2 {
-  margin-bottom: 32px;
+  margin-bottom: 16px;
   font-weight: 600;
 }
 
@@ -199,8 +220,29 @@ button:hover, .btn:hover {
   font-weight: 400;
 }
 
+.company h2:nth-child(2) {
+  font-style: italic;
+}
+
 .company .esg {
   margin-bottom: 24px;
+}
+
+.company .esg p {
+  margin-bottom: 1px;
+}
+
+.average-score {
+  text-align: right;
+}
+
+.average-score h2:nth-child(1) {
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+
+.average-score h2:nth-child(2) {
+  font-size: 88px;
 }
 
 .company .location {
@@ -241,11 +283,31 @@ form button {
   min-width: 360px;
 }
 
-
 .favourites h2 {
   font-size: 20px;
   font-weight: 600;
   color: var(--dark-grey);
+  text-align: center;
+}
+
+.esg-indicator {
+  height: 24px;
+  border-radius: 4px;
+  margin: 4px 0;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  opacity: 0.75
+}
+
+.esg-good {
+  background-color: #138808;
+}
+
+.esg-moderate {
+  background-color: #e1ad01;
+}
+
+.esg-bad {
+  background-color: #960018;
 }
 
 @media only screen and (max-width: 960px) {
@@ -286,11 +348,16 @@ form button {
 }
 
 @media only screen and (max-width: 430px) {
-  .company-card-button-wrap {
+  .company-card-buttons-wrap {
     display: flex;
     justify-content: center;
   }
+  
+  .favourites h2 {
+    text-align: center;
+  }
 }
+
 
 .map-wrap {
   max-width: 500px;
