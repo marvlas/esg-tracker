@@ -226,6 +226,24 @@ button:hover, .btn:hover {
 
 .company .esg {
   margin-bottom: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.company .esg div {
+  margin-bottom: 4px;
+  width: 100%
+}
+
+.company .esg .average-score h2:nth-child(2) {
+  text-align: right;
+  font-style: normal;
+  font-size: 128px;
+}
+
+.company .esg .average-score h3 {
+  font-style: italic;
 }
 
 .company .esg p {

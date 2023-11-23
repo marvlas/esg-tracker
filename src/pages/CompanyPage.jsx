@@ -60,14 +60,15 @@ function CompanyPage() {
                                 <div>
                                     <p>Environmental score:</p>
                                     <ESGIndicator score={company.esg.e_index} />
-                                </div>
-                                <div>
                                     <p>Social score:</p>
                                     <ESGIndicator score={company.esg.s_index} />
-                                </div>
-                                <div>
                                     <p>Governance score:</p>
                                     <ESGIndicator score={company.esg.g_index} />
+                                </div>
+                                <div className="average-score">
+                                    <h2>Weighted average ESG score:</h2>
+                                    <h2>{Math.round((company.esg.e_index + company.esg.s_index + company.esg.g_index) / 3)}</h2>
+                                    <h3>For more information about this company's sustainability activities, click here to explore further details</h3>
                                 </div>
                             </div>
                             <div className="location">
