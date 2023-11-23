@@ -16,8 +16,9 @@ function ESGIndicator ({ score }) {
   
     return (
       <div>
-        <div className={`esg-indicator ${indicatorClass}`} style={{ width: `${score}%` }}></div>
-        <p>{score}</p>
+        <div className={`esg-indicator ${indicatorClass}`} style={{ width: `${score}%` }}>
+          <p className="esg-indicator-value">{score}</p>
+        </div>
       </div>
     );
   };

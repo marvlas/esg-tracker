@@ -4,7 +4,7 @@ import governanceIcon from "../assets/scale.svg"
 
 function Icons () {
     return (
-        <div className="container icons">
+        <div className="container">
             <h1 className="centered">ESG tracker</h1>
             <div className="icons-wrap">
                 <div className="icons-card">

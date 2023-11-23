@@ -33,7 +33,7 @@ h1 {
 }
 
 button, .btn {
-  margin-top: 32px;
+  margin-top: 16px;
   border-radius: 6px;
   border: 1px solid transparent;
   padding: .75em 1em;
@@ -66,6 +66,7 @@ button:hover, .btn:hover {
   gap: 64px;
   margin-top: 64px;
   margin-bottom: 64px;
+  color: var(--dark-grey)
 }
 
 .icons-wrap h2 {
@@ -96,7 +97,7 @@ button:hover, .btn:hover {
 }
 
 .company-card {
-  padding: 2em 1.5em;
+  padding: 1.5em 1em;
   border-radius: 8px;
   background-color: var(--light-grey);
   flex: 0 1 calc(50% - 8px);
@@ -110,9 +111,9 @@ button:hover, .btn:hover {
 }
 
 .company-card .company-logo img {
-  max-width: 180px;
+  max-width: 132px;
   width: 100%;
-  max-height: 56px;
+  max-height: 80px;
   margin-bottom: 32px;
 }
 
@@ -122,20 +123,19 @@ button:hover, .btn:hover {
   justify-content: space-between;
 }
 
+.company-card-info h4 {
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.company-card-info h4 span {
+  min-width: 80px;
+}
+
 .company-card h3 {
   font-weight: 700;
   font-size: 24px;
-  margin-bottom: 12px;
-}
-.company-card h4 {
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 16px;
-  display: flex;
-}
-
-.company-card h4:nth-child(2) {
-  font-style: italic;
+  margin-bottom: 24px;
 }
 
 .company-card h4 img {
@@ -145,12 +145,16 @@ button:hover, .btn:hover {
 
 .company-card div div span {
   font-weight: 400;
+  font-size: 12px;
   display: inline-block;
   margin-right: 4px;
 
 }
 
 .company-card .esg {
+  background: #f2f2f2;
+  padding: 12px;
+  border-radius: 4px;
   font-size: 12px;
   margin-top: 24px;
   color: var(--dark-grey);
@@ -162,6 +166,10 @@ button:hover, .btn:hover {
 .company-card .esg div {
   margin-bottom: 4px;
   width: 100%
+}
+
+.company-card .esg h5 {
+  font-weight: 700;
 }
 
 .company-card-buttons-wrap {
@@ -259,12 +267,16 @@ button:hover, .btn:hover {
   justify-content: space-between;
 }
 
-.company .esg div {
+
+.company-card .esg .value {
+  font-weight: 600;
+  font-size: 64px;
   margin-bottom: 4px;
-  width: 100%
+  width: 100%;
+  letter-spacing: -2px;
 }
 
-.company .esg .average-score h2:nth-child(2) {
+.company .esg .average-score div:nth-child(2) {
   text-align: right;
   font-style: normal;
   font-size: 128px;
@@ -341,7 +353,16 @@ form button {
   border-radius: 4px;
   margin: 4px 0;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-  opacity: 0.75
+  opacity: 0.75;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.esg-indicator-value {
+ color: white;
+ font-weight: 600;
+ padding-left: 8px;
 }
 
 .esg-good {
