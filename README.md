@@ -20,15 +20,20 @@ At the bottom of the homepage, a map is also present to visualize the location o
 
 1. Fork this repo and clone it
 2. Navigate to this directory and run the following codes:
-    - npm install
-    - code -r .
+    ```bash 
+    npm install 
+    code -r .
+    ```
 3. Once opened, install the following dependencies:
-    - npm install react-router-dom
-    - npm install react react-dom leaflet (for the map component to work)
-    - npm install react-leaflet (for the map component to work)
+    ```bash
+    npm install react-router-dom 
+    npm install react react-dom leaflet 
+    npm install react-leaflet
+    ```
 4. Once all the previous steps have been completed, type this code to enable the app to run locally on your browser:
-    - npm run dev
-
+    ```bash
+    npm run dev
+    ```
 Please note that this app has a .env file which houses the url for the API. If not present, follow the steps bellow:
 
 1. Create a .env file in the root/directory folder
@@ -37,8 +42,9 @@ Please note that this app has a .env file which houses the url for the API. If n
     "https://json-esg-tracker.adaptable.app/companies"
 
 3. When completed, it shoud look like this:
-
+    ```bash
     VITE_API_URL = "https://json-esg-tracker.adaptable.app/companies"
+    ```
 
 ## Demo 
 
