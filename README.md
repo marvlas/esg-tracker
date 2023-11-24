@@ -1,8 +1,48 @@
 # ESG Tracker
 
-## MVP
+## About
 
-An app for investors, regulators, and individuals to explore companies' ESG and other relevant data. Companies can register their ESG information. Users can filter and save preferred companies.
+An app for investors, regulators, and individuals to explore companies' ESG and other relevant data. From their perspective, they can see important information such as:
+- ESG scores
+- The country they are located in
+- The industry they are active in
+- Their market capitalization 
+
+A filtering function is also present whenever they need to find a company that matches their specific criteria. If more information is needed, the specific company page can be accessed.
+
+In addition, users can add their favourite company to their favourites list by clicking the heart button for later reference. If they decide to change their mind, they can remove it from that list.
+
+From the companies perspective, they can register their ESG information by clicking the "Add Company" button where they can input all the relevant information. If something changes within their profile, they can always edit their information and even delete their profile when needed. 
+
+At the bottom of the homepage, a map is also present to visualize the location of each company. 
+
+## Steps to run the app locally
+
+1. Fork this repo and clone it
+2. Navigate to this directory and run the following codes:
+    - npm install
+    - code -r .
+3. Once opened, install the following dependencies:
+    - npm install react-router-dom
+    - npm install react react-dom leaflet (for the map component to work)
+    - npm install react-leaflet (for the map component to work)
+4. Once all the previous steps have been completed, type this code to enable the app to run locally on your browser:
+    - npm run dev
+
+Please note that this app has a .env file which houses the url for the API. If not present, follow the steps bellow:
+
+1. Create a .env file in the root/directory folder
+2. Create a variable called VITE_API_URL and store this link:
+
+    "https://json-esg-tracker.adaptable.app/companies"
+
+3. When completed, it shoud look like this:
+
+    VITE_API_URL = "https://json-esg-tracker.adaptable.app/companies"
+
+## Demo 
+
+https://esg-tracker.netlify.app/
 
 ## Pages
 
@@ -91,7 +131,7 @@ An app for investors, regulators, and individuals to explore companies' ESG and 
     - [x] Copyrighting -> J
     - [x] JSX structure -> M
 - [x] Add ESG index to company page -> J
-- [ ] Adjust edit/creat forms style -> M
+- [x] Adjust edit/creat forms style -> M
 
 
 
